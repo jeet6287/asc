@@ -10,6 +10,7 @@ Updated : 2020-06-04 */
     (o.m = r),
         (o.c = n),
         (o.d = function (t, e, r) {
+            console.log("A");
             o.o(t, e) || Object.defineProperty(t, e, { configurable: !1, enumerable: !0, get: r });
         }),
         (o.n = function (t) {
@@ -31,6 +32,7 @@ Updated : 2020-06-04 */
 })([
     function (t, e, r) {
         "use strict";
+        console.log("B");
         Object.defineProperty(e, "__esModule", { value: !0 }),
             (e.getEmptyIframe = function (t, e) {
                 var r = document.createElement("iframe");
@@ -48,6 +50,7 @@ Updated : 2020-06-04 */
                 );
             }),
             (e.insertElement = function (t, e, r) {
+                console.log("C");
                 var n;
                 (e = e || document), (n = r ? e.getElementsByTagName(r) : e.getElementsByTagName("head"));
                 try {
@@ -57,15 +60,17 @@ Updated : 2020-06-04 */
     },
     function (t, e, r) {
         "use strict";
-        var n = r(2),
-            o = r(5);
+        console.log("D");
+        var n = r(2),o = r(5);
         window.ucTag = window.ucTag || {};
         var i = (0, o.newEnvironment)(window),
             a = (0, n.newRenderingManager)(window, i);
         window.ucTag.renderAd = a.renderAd;
+        console.log("D- 11 ", window.ucTag); 
     },
     function (t, e, r) {
         "use strict";
+        console.log("E");
         Object.defineProperty(e, "__esModule", { value: !0 }),
             (e.newRenderingManager = function (h, d) {
                 function n(t, e, r, n, o, i) {
@@ -149,7 +154,11 @@ Updated : 2020-06-04 */
                 }
                 return {
                     renderAd: function (t, e) {
+                        console.log("D- 12 ", t); 
+                        console.log("D- 13 ", e);
                         var r = g.transformAuctionTargetingData(e);
+                        console.log("D- 14 r ", r);
+                        console.log("D- 15 d ", d);
                         d.isMobileApp(r.env)
                             ? n(r.cacheHost, r.cachePath, r.uuid, r.size, r.hbPb, !0)
                             : d.isAmp(r.uuid)
@@ -159,7 +168,9 @@ Updated : 2020-06-04 */
                                   for (var r = h, n = 0; n < 10; n++)
                                       if ((r = r.parent).pbjs)
                                           try {
+                                              console.log("D- 15 ");
                                               r.pbjs.renderAd(t, e);
+                                              console.log("D- 16 ");
                                               break;
                                           } catch (t) {
                                               continue;
@@ -248,6 +259,7 @@ Updated : 2020-06-04 */
                 return '<div style="position:absolute;left:0px;top:0px;visibility:hidden;"><img src="'.concat(e, '"></div>');
             }),
             (n.writeAdUrl = function (t, e, r) {
+                console.log("F");
                 var n = o.getEmptyIframe(r, e);
                 (n.src = t), document.body.appendChild(n);
             }),
@@ -270,8 +282,8 @@ Updated : 2020-06-04 */
                 });
             }),
             (n.loadScript = function (t, e, r) {
-                var n = t.document,
-                    o = n.createElement("script");
+                console.log("G");
+                var n = t.document, o = n.createElement("script");
                 (o.type = "text/javascript"),
                     r &&
                         "function" == typeof r &&
@@ -400,6 +412,7 @@ Updated : 2020-06-04 */
         }
     },
     function (t, e, r) {
+        console.log("H");
         var n;
         (n = function () {
             return (
@@ -407,6 +420,7 @@ Updated : 2020-06-04 */
                 (r.m = n = [
                     function (t, e, r) {
                         "use strict";
+                        console.log("I");
                         var n,
                             o = r(1),
                             i = (n = o) && n.__esModule ? n : { default: n };
@@ -414,6 +428,7 @@ Updated : 2020-06-04 */
                     },
                     function (t, e, r) {
                         "use strict";
+                        console.log("J");
                         e.__esModule = !0;
                         var s =
                             Object.assign ||
@@ -486,6 +501,7 @@ Updated : 2020-06-04 */
                                         var a = f.win.onerror || u;
                                         return (
                                             (f.win.onerror = function (t, e, r) {
+                                                console.log("K");
                                                 n.error({ msg: t + " - " + e + ": " + r }), a.apply(f.win, [t, e, r]);
                                             }),
                                             f.write(e, function () {
@@ -518,6 +534,7 @@ Updated : 2020-06-04 */
                     },
                     function (t, e, r) {
                         "use strict";
+                        console.log("L");
                         e.__esModule = !0;
                         var n,
                             s =
@@ -735,6 +752,7 @@ Updated : 2020-06-04 */
                         e.default = h;
                     },
                     function (t, e, r) {
+                        console.log("M");
                         var n;
                         (n = function () {
                             return (
@@ -742,6 +760,7 @@ Updated : 2020-06-04 */
                                 (r.m = n = [
                                     function (t, e, r) {
                                         "use strict";
+                                        console.log("N");
                                         var n,
                                             o = r(1),
                                             i = (n = o) && n.__esModule ? n : { default: n };
@@ -749,6 +768,7 @@ Updated : 2020-06-04 */
                                     },
                                     function (t, e, r) {
                                         "use strict";
+                                        console.log("O");
                                         e.__esModule = !0;
                                         var n,
                                             a = u(r(2)),
@@ -849,6 +869,7 @@ Updated : 2020-06-04 */
                                     },
                                     function (t, e, r) {
                                         "use strict";
+                                        console.log("P");
                                         e.__esModule = !0;
                                         var a =
                                             "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
@@ -913,6 +934,7 @@ Updated : 2020-06-04 */
                                     },
                                     function (t, e, r) {
                                         "use strict";
+                                        console.log("Q");
                                         (e.__esModule = !0), (e.EndTagToken = e.AtomicTagToken = e.StartTagToken = e.TagToken = e.CharsToken = e.CommentToken = e.Token = void 0);
                                         var a = r(5);
                                         function s(t, e) {
@@ -1154,6 +1176,7 @@ Updated : 2020-06-04 */
     },
     function (t, e, r) {
         "use strict";
+        console.log("R");
         Object.defineProperty(e, "__esModule", { value: !0 }),
             (e.newEnvironment = function (r) {
                 function e() {
